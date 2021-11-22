@@ -32,6 +32,8 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ env.PYTHON_VERSION }}
+        cache: pip
+        cache-dependency-path: linter_requirements.txt
     - name: Install linter requirements
       run:
         python -m pip install -r linter_requirements.txt
@@ -50,6 +52,8 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ env.PYTHON_VERSION }}
+        cache: pip
+        cache-dependency-path: linter_requirements.txt
     - uses: ./.github/actions
 
   basic:
@@ -66,6 +70,8 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+        cache: pip
+        cache-dependency-path: linter_requirements.txt
     - uses: ./.github/actions
 
   debug:
@@ -81,6 +87,8 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ env.PYTHON_VERSION }}
+        cache: pip
+        cache-dependency-path: linter_requirements.txt
     - uses: ./.github/actions
 
   blas64:
@@ -96,6 +104,8 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ env.PYTHON_VERSION }}
+        cache: pip
+        cache-dependency-path: linter_requirements.txt
     - uses: ./.github/actions
 
   full:
@@ -114,6 +124,8 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ env.PYTHON_VERSION }}
+        cache: pip
+        cache-dependency-path: linter_requirements.txt
     - uses: ./.github/actions
 
   benchmark:
@@ -135,6 +147,8 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ env.PYTHON_VERSION }}
+        cache: pip
+        cache-dependency-path: linter_requirements.txt
     - uses: ./.github/actions
 
   no_relaxed_strides:
@@ -152,6 +166,8 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ env.PYTHON_VERSION }}
+        cache: pip
+        cache-dependency-path: linter_requirements.txt
     - uses: ./.github/actions
 
   use_wheel:
@@ -293,6 +309,8 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ env.PYTHON_VERSION }}
+        cache: pip
+        cache-dependency-path: linter_requirements.txt
     - name: Install Intel SDE
       run: |
         curl -o /tmp/sde.tar.bz2 https://www.intel.com/content/dam/develop/external/us/en/documents/downloads/sde-external-8.69.1-2021-07-18-lin.tar.bz2
